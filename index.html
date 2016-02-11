@@ -22,8 +22,15 @@
       ga('send', 'pageview');
     </script>
     
-    <script src="http://www.google-analytics.com/analytics.js" defer></script>
-    <script src="js/perfmatters.js" defer></script>
+    <!--<script src="http://www.google-analytics.com/analytics.js" defer></script>-->
+    <script>
+    var googleWorker = new Worker("http://www.google-analytics.com/analytics.js");
+
+    var perfWorker = new Worker("js/perfmatters.js");
+
+    </script>
+
+    <!--<script src="js/perfmatters.js" defer></script>-->
   </head>
 
   <body>
