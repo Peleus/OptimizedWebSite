@@ -458,7 +458,7 @@ var resizePizzas = function(size) {
       randPizzaContainer[i].style.width = newwidth;
     }
   }
-
+/*
   function changePizzaSizes(size) {
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
       var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
@@ -466,6 +466,7 @@ var resizePizzas = function(size) {
       document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
     }
   }
+  */
 
   changePizzaSizes(size);
 
