@@ -450,10 +450,12 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    //var randPizzaContainer = document.getElementsByClassName(".randomPizzaContainer");
+    
+    //Performance(BWF) - Removed var assignments from inside for loop and assigned new variables where needed
+    //Performance(BWF) - Removed from loop: var randPizzaContainer = document.getElementsByClassName(".randomPizzaContainer");
+    //Perfromance(BWF) - Removed from loop: var windowWidth = document.getElementById("#randomPizzas").offsetWidth;
     var randPizzaContainer = document.querySelectorAll(".randomPizzaContainer");
     var randPizzaContainerLength = randPizzaContainer.length
-    //var windowWidth = document.getElementById("#randomPizzas").offsetWidth;
     var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
     var oldWidth = randPizzaContainer[0].offsetWidth;
     for (var i = 0; i < randPizzaContainerLength; i++) {
@@ -463,7 +465,7 @@ var resizePizzas = function(size) {
     }
   }
   
-/*
+/* Performance(BWF) - Refactored changePizzaSize
   function changePizzaSizes(size) {
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
       var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
@@ -517,14 +519,13 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+  //Performance(BWF) - Removed calculations and query from loop and created new variables where needed
   var items = document.querySelectorAll('.mover');
   var scrollTopTemp = document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrollTopTemp / 1250) + (i % 5));
-    //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    //items[i].basicLeft + 100 * phase + 'px'
+    //Performance(BWF) - Removed: var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    //Performance(BWF) - Refactored and changed to transform: items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     var animCalc = items[i].basicLeft + 100 * phase;
     var transStyle = "translateX(" + animCalc + "px)"
     items[i].style.transform = transStyle;
@@ -547,7 +548,8 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  //Performance: Reduced the number of pizzas to what can be seen.
+  for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

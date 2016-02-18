@@ -29,6 +29,7 @@ form {
   font-weight: 800;
 }
 
+/*Performance - added will-change*/
 .mover {
   position: fixed;
   width: 256px;
