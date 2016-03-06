@@ -2,7 +2,7 @@
 
 ## About
 
-This project was presented as a challenge to optimize the performance of the front page and the Pizza page. The front page had to run with a PageSpeed score of 90 on Desktop and mobile.
+This project was presented as a challenge to optimize the performance of the front page and the pizza page. The front page had to run with a PageSpeed score of 90 on desktop and mobile.
 
 The Pizza page had to run at a consistent 60 FPS while scrolling and the time to re-size the pizzas had to run in less than 5 ms.
 
