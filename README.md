@@ -15,7 +15,7 @@ Index.HTML
 Optimizations included:
 - Removing the Google font reference seemed to help performance. Removing it did not seem to substantially change the appearance of the text. It did cause performance issues.
 - I moved the CSS link to the bottom of the page. This seemed to improve performance substantially with no substantial visual issues.
-- I deferred the google analytics JavaScript.
+- I deferred the Google Analytics JavaScript.
 - I optimized the size of the page raster files.
 - The page now has a mobile PageSpeed score of 93 and a desktop score of 93.
 
